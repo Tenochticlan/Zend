@@ -26,7 +26,7 @@ $application->bootstrap()
             ->run();
 
 
-<?php include'../application/bootstrap';
+include '../application/bootstrap';
 $configSection = getenv('PLACES_CONFIG') ? getenv('PLACES_CONFIG') : 'general';
 $bootstrap = new Bootstrap($configSection);
 $bootstrap->runApp();

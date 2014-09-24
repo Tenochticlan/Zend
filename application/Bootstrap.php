@@ -30,7 +30,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		$frontController->setControllerDirectory(ROOT_DIR.'/application/controllers');
 	}
 	
-	public funtrion runApp()
+	public function runApp()
 	{
 	$this->configureFrontController();
 	//run!
