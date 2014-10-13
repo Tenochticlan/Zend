@@ -2,15 +2,21 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
+	
 	public function __construct($configSection)
 	{
 		$rootDir = dirname(dirname(__FILE__));
 		define('ROOT_DIR',$$rootDIR);
-		set_include_path(get_include_path().PATH_SEPARATOR.ROOT_DIR.'/library/'.PATH_SEPARATOR.ROOT_DIR.'/application/models/');
+		set_include_path(get_include_path()
+							.PATH_SEPARATOR.ROOT_DIR.'/library/'
+							.PATH_SEPARATOR.ROOT_DIR.'/application/models/'
+							.PATH_SEPARATOR.ROOT_DIR.'/forms/'
+						);
 	
 	include'Zend/Loader.php';
 	Zend_Loader::registerAutoload();
-
+	
+	
 	// Load configuration
 	Zend_Registry::set('configSection',$configSection);
 	$config = new Zend_Config_Ini(ROTT_DIR.'/application/config.ini',$configSection);
