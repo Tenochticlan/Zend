@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 <body>
 <h1>Anmelden</h1>
@@ -18,3 +19,12 @@
 </form>
 </body>
 </html>
+=======
+<h1>Anmelden</h1>
+<p>bitte hier anmelden</p>
+<?php echo $this->formResponse; ?>
+<?php echo $this->form; ?>
+<?php 
+
+
+>>>>>>> c8fe6c8aaf075944b6e10d63d9e9a697a7057997
