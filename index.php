@@ -1,4 +1,9 @@
 <?php
+include '../application/Bootstrap.php';
+$configSection = getenv('Config') ?
+			 getenv('Config') : 'general';
+$bootstrap = new Bootstrap($configSection);
+$bootstrap->runApp();
 
 // Define path to application directory
 defined('APPLICATION_PATH')

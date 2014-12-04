@@ -19,15 +19,15 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	
 	// Load configuration
 	Zend_Registry::set('configSection',$configSection);
-	$config = new Zend_Config_Ini(ROTT_DIR.'/application/config.ini',$configSection);
+	$config = new Zend_Config_Ini(ROOT_DIR.'/application/config.ini',$configSection);
 	Zend_Registry::set('config',$config);
 
 	date_default_timezone_set($config->date_default_timezone);
 
 	// configure database and store to the registry
 	$db = Zend_Db::factory($config->db);
-	Zend_Db_Table_Abstract::setDefaulltAdapter($db);
-	ZendRegistry::set('db',$db);
+	Zend_Db_Table_Abstract::setDefaultAdapter($db);
+	Zend_Registry::set('db',$db);
 	}
 	
 	public function configureFrontController()
@@ -43,6 +43,5 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	$frontConntroller = Zend_Controller_Front::getInstance();
 	$frontController->dispatch();
 	}
-
 }
 

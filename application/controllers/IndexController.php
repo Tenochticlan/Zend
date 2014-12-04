@@ -10,7 +10,8 @@ class IndexController extends Zend_Controller_Action
 
 	public function indexAction()
 	{
-		if (null === Zend_Auth::getInstance()->getIndentity()){
+		if (null === Zend_Auth::getInstance()->getIndentity())
+		{
 		$this->_forward('form');
 		}
 	}
@@ -19,10 +20,11 @@ class IndexController extends Zend_Controller_Action
 	{
 		$form = new LoginForm('/auth/form/');
 		$this->view->formResponse = '';
-		if ($this->_request->isPost()) {
+		if ($this->_request->isPost()) 
+		{
 			if ($form->isValid(
-					$this->_request->isPost())
-			) {
+					$this->_request->isPost()))
+			 {
 				$authAdapter = $form->username
 				->getValidator('Authorise')
 				->getAuthAdapter();
@@ -31,7 +33,9 @@ class IndexController extends Zend_Controller_Action
 				$auth = Zend_Auth::getInstance();
 				$auth->getStorage()->write($data);
 				$this->_redirect($this->_redirectUrl);
-			} else {
+			}
+			else
+			{
 				$this->view->formResponse = '
 					Entschuldigung, Es ist ein problem aufgetreten 
 					bitte überprüfen sie ihre Anmeldedaten:';

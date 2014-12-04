@@ -1,0 +1,17 @@
+<H1>Log in</H1>
+<p>Please log in here</p>
+
+<form method="post" action="<?php echo $this->url(array('controller'=>'auth', 'action'=>'identify')); ?>">
+	<div>
+		<label>Username</label>
+		<input type="text" name="username" value="" />
+	</div>
+	<div>
+		<label>Passwort</label>
+		<input type="password" name="password" value="" />
+	</div>
+	<div>
+		<input type="submit" name="login" value="Login" />
+	</div>
+	
+</form>
